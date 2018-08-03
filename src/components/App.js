@@ -5,9 +5,18 @@ import GuessForm from './GuessForm';
 import GuessNumber from './GuessNumber';
 import Guesses from './Guesses';
 import Instructions from './Instructions';
+
 import './App.css';
 
-class App extends Component {
+export default class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      guesses: [],
+      feedback: 'Make Your Guess!',
+      correctAnswer: Math.round(Math.random() * 100) + 1
+    };
+  }
   render() {
     return (
       <div className="App">
@@ -35,5 +44,3 @@ class App extends Component {
     );
   }
 }
-
-export default App;
