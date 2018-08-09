@@ -1,7 +1,10 @@
 import React from 'react';
+import './Guesses.css';
 
 export default function Guesses(props) {
     return (
-        <p className="guess-0">34</p>
+        <ul className="showGuesses">
+            {props.guesses}
+        </ul>
     );
 }

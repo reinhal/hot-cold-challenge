@@ -1,18 +1,24 @@
-import React from 'react';
-
+import React, { Fragment } from 'react';
 import './Nav.css';
+/* This is  a stateless componenet */
 
 export default function Nav(props) {
     return (
-        <nav>
-            <ul>
-                <li>
-                    <a href="#" className="what">WHAT?</a>
-                </li>
-                <li>
-                    <a href="#" className="new-game">+NEW GAME</a>
-                </li> 
-            </ul>
-        </nav>
+        <Fragment>
+            <nav>
+                <ul>
+                    <li>
+                        <a 
+                            href="#new-game" 
+                            className="new-game"
+                            aria-label="Start a new game"
+                            onCLick={() => props.restartGame()}
+                        >
+                        + NEW GAME
+                        </a>
+                    </li> 
+                </ul>
+            </nav>
+        </Fragment>
     );
 }
