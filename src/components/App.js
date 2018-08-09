@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import Nav from './Nav';
 import Feedback from './Feedback';
 import GuessForm from './GuessForm';
@@ -30,7 +30,7 @@ export default class App extends React.Component {
   makeGuess(guess) {
     guess = parseInt(guess, 10);
     if (isNaN(guess)) {
-      this.setState({ feedback: 'Please enter a valid number!'});
+      this.setState({feedback: 'Please enter a valid number!'});
       return;
     }
 
@@ -51,7 +51,7 @@ export default class App extends React.Component {
 
     this.setState({
       feedback, 
-      guesses: [this.state.guesses, guess]
+      guesses: [...this.state.guesses, guess]
     });
   }
 
@@ -59,30 +59,30 @@ export default class App extends React.Component {
     const { feedback, guesses } = this.state;
     const guessNumber = guesses.length; 
     return (
-      <div className="App">
-        <Nav onRestartGame={() => this.restartGame()} />
-        <header className="HotCold-header">
-          <h1 className="HotCold-title">HOT or COLD</h1>
-        </header>
-        <section className="instructions">
-          <Instructions />
-        </section>
-        <main role="main" className="container">
-          <section aria-label="Guess section">
-          <Feedback feedback={feedback} />
-          <GuessForm onMakeGuess={guess => this.onMakeGuess(guess)} />
-          <GuessNumber guessNumber={guessNumber} />
-          </section>
-          <ul>
-            <li>
-              <Guesses />
-              <p className="guess-1">40</p>
-              <p className="guess-2">42</p>
-              <p className="guess-3">37</p>
-            </li>
-          </ul>
-        </main>
-      </div>
+      <Fragment>
+        <div className="App">
+              <Nav restartGame={() => this.restartGame()} />
+        </div>
+        <div className="row">
+          <div className="col-6-left">
+            <div>
+              <section className="instructions">
+                <Instructions />
+              </section>
+            </div>
+          </div>
+          <div className="col-6-right">
+            <main role="main" className="container">
+              <section role="region" aria-label="Guess section">
+                <Feedback feedback={feedback} />
+                <GuessForm onMakeGuess={guess => this.makeGuess(guess)} />
+                <GuessNumber guessNumber={guessNumber} />
+                <Guesses guesses={guesses}/>
+              </section>
+            </main>
+          </div>
+        </div>
+      </Fragment>
     );
   }
 }

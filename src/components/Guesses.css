@@ -1,0 +1,11 @@
+.pastGuesses {
+    font-size: 18px;
+    color: white;
+    background-color: black;
+    background-color: black;
+    width: 30px;
+    padding: 5px;
+    margin: 2px;
+    margin-bottom: 15px;
+    float: left;
+}

@@ -1,28 +1,40 @@
-.App {
+* {
+  box-sizing: border-box;
+}
+
+.row::before,
+.row::after {
+  display: table;
+  content: '';
+}
+
+.row::after {
+  clear: both;
+}
+
+.row {
+  /* max-width: 1000px; */
+  /* padding-left: 20px;
+  padding-right: 20px; */
+  margin: 0 auto;
+}
+
+.col-6-left {
+  float: left;
+  width: 47%;
   text-align: center;
   background-color: lightblue;
-  margin: 15px;
-  padding: 15px;
+  margin: 10px;
   border: 3px solid azure;
   border-radius: 5px;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
+.col-6-right {
+  float: right;
+  width: 47%;
+  text-align: center;
+  background-color: lightblue;
+  margin: 10px;
+  border: 3px solid azure;
+  border-radius: 5px;
 }

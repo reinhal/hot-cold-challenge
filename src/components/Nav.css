@@ -1,4 +1,29 @@
+h1 {
+    font-family: 'Baloo', cursive;
+    font-size: 36px;
+    text-align: center;
+}
+
+.hot {
+    color: darkred;
+    font-size: 54px;
+}
+
+.cold {
+    color: darkblue;
+    font-size: 54px;
+}
+
 a {
-    color: white;
-    text-decoration: none;
+    color: black;
+    font-family: 'Cabin Condensed', sans-serif;
+    font-size: 18px;
+    float: right;
+    margin-right: 15px;
+}
+
+header {
+    background-color: aqua;
+    padding: 15px;
+    margin-bottom: 15px;
 }
